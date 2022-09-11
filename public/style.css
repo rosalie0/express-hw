@@ -1,0 +1,32 @@
+.container {
+	display: flex;
+	flex-direction: column;
+}
+.movie-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 25px;
+	row-gap: 25px;
+}
+
+.movie-image-container {
+	padding-top: 5px;
+}
+.movie-image-container > img {
+	height: 300px;
+	width: auto;
+}
+.movie-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	gap: 5px;
+	border: 2px black solid;
+	padding-bottom: 5px;
+}
+
+h3,
+h5 {
+	margin: 0px;
+}
