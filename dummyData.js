@@ -32,6 +32,41 @@ const data = [
 		trailerURL: 'https://www.youtube.com/watch?v=-4nRpdONaAA',
 		imageURL: '/pig.jpg',
 	},
+	{
+		title: 'The Mist',
+		year: 2007,
+		director: ['Frank Darabont'],
+		starring: [
+			'Thomas Jane',
+			'Marcia Gay Harden',
+			'Laurie Holden',
+			'Andre Braugher',
+			'Toby Jones',
+			'William Sadler',
+			'Jeffrey DeMunn',
+			'Frances Sternhagen',
+			'Sam Witwer',
+			'Alexa Davalos',
+			'Nathan Gamble',
+			'Buck Taylor',
+		],
+		runtime: 126,
+		blurb:
+			'A freak storm unleashes a species of bloodthirsty creatures on a small town, where a small band of citizens hole up in a supermarket and fight for their lives.',
+		trailerURL: 'https://www.youtube.com/watch?v=LhCKXJNGzN8',
+		imageURL: '/themist.jpg',
+	},
+	{
+		title: 'The Thing',
+		year: 1982,
+		director: ['John Carpenter'],
+		starring: ['Kurt Russel'],
+		runtime: 109,
+		blurb:
+			'A research team in Antarctica is hunted by a shape-shifting alien that assumes the appearance of its victims.',
+		trailerURL: 'https://www.youtube.com/watch?v=5ftmr17M-a4',
+		imageURL: '/thething.jpg',
+	},
 ];
 
 const list = () => {

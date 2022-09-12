@@ -4,9 +4,10 @@
 	justify-content: space-between;
 	align-items: center;
 }
+
 .movie-container {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
 	column-gap: 25px;
 	row-gap: 25px;
 }
@@ -34,8 +35,9 @@
 }
 .movie-blurb {
 	font-style: italic;
-	width: 500px;
+	width: 350px;
 }
+
 h3,
 h5,
 p {
