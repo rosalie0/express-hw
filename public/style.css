@@ -1,6 +1,8 @@
 .container {
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
 }
 .movie-container {
 	display: grid;
@@ -12,6 +14,11 @@
 .movie-image-container {
 	padding-top: 5px;
 }
+
+.detailed-movie-image-container {
+	padding-top: 10px;
+}
+
 .movie-image-container > img {
 	height: 300px;
 	width: auto;
@@ -25,8 +32,12 @@
 	border: 2px black solid;
 	padding-bottom: 5px;
 }
-
+.movie-blurb {
+	font-style: italic;
+	width: 500px;
+}
 h3,
-h5 {
-	margin: 0px;
+h5,
+p {
+	margin: 5px;
 }

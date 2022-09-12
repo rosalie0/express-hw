@@ -4,14 +4,14 @@ const app = express();
 // Data
 const data = require('./dummyData');
 
-const movieDetailsView = require('./views/movieDetails');
+const movieDetails = require('./views/movieDetails');
 
 // Volleyball middleware
 const volleyball = require('volleyball');
 app.use(volleyball);
 
 // Static
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
 	const html = `try going to <a href="/health"> Health </a> or <a href="/movies"> Movies </a>`;
@@ -29,7 +29,7 @@ app.get('/movies', (req, res) => {
       <meta charset="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="/style.css">
 
       <title>Favorite Movies</title>
     </head>
@@ -52,7 +52,7 @@ app.get('/movies', (req, res) => {
 									alt="Promotional Poster for the movie ${movie.title}"
 								/>
 							</div>
-							<h3><a href="/movies/${movie.title}">${movie.title}!!!</a></h3>
+							<h3><a href="/movies/${movie.title}">${movie.title}</a></h3>
 							<h5>Directed by ${movie.director.join(' and ')}</h5>
 						</div>`
 						)
@@ -68,7 +68,8 @@ app.get('/movies', (req, res) => {
 app.get('/movies/:title', (req, res) => {
 	const title = req.params.title;
 	const movieObj = data.find(title);
-	res.send(movieObj);
+	//res.send(movieObj.director.join(' '));
+	res.send(movieDetails(movieObj));
 });
 
 const PORT = 1337;
