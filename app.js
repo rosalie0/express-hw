@@ -4,6 +4,8 @@ const app = express();
 // Data
 const data = require('./dummyData');
 
+const movieDetailsView = require('./views/movieDetails');
+
 // Volleyball middleware
 const volleyball = require('volleyball');
 app.use(volleyball);
@@ -40,6 +42,7 @@ app.get('/movies', (req, res) => {
         </p>
         <div class="movie-container">
           ${data
+						.list()
 						.map(
 							(movie) =>
 								`<div class="movie-card">
@@ -49,7 +52,7 @@ app.get('/movies', (req, res) => {
 									alt="Promotional Poster for the movie ${movie.title}"
 								/>
 							</div>
-							<h3>${movie.title}</h3>
+							<h3><a href="/movies/${movie.title}">${movie.title}!!!</a></h3>
 							<h5>Directed by ${movie.director.join(' and ')}</h5>
 						</div>`
 						)
@@ -60,6 +63,12 @@ app.get('/movies', (req, res) => {
   </html>
   `;
 	res.send(html);
+});
+
+app.get('/movies/:title', (req, res) => {
+	const title = req.params.title;
+	const movieObj = data.find(title);
+	res.send(movieObj);
 });
 
 const PORT = 1337;

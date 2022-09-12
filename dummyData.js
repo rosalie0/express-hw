@@ -38,4 +38,12 @@ const list = () => {
 	return [...data];
 };
 
-module.exports = list();
+const find = (title) => {
+	for (let i = 0; i < data.length; i++) {
+		if (data[i].title === title) {
+			return { ...data[i] };
+		}
+	}
+	return 'No movie with such title found';
+};
+module.exports = { list: list, find: find };
