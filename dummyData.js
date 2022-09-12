@@ -44,6 +44,6 @@ const find = (title) => {
 			return { ...data[i] };
 		}
 	}
-	return 'No movie with such title found';
+	return false;
 };
 module.exports = { list: list, find: find };

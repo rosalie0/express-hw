@@ -68,8 +68,20 @@ app.get('/movies', (req, res) => {
 app.get('/movies/:title', (req, res) => {
 	const title = req.params.title;
 	const movieObj = data.find(title);
+
+	if (movieObj === false)
+		throw new Error('Movie with given title does not exist');
 	//res.send(movieObj.director.join(' '));
 	res.send(movieDetails(movieObj));
+});
+
+app.get('*', (req, res) => {
+	throw new Error('Sorry, this page does not exist');
+});
+
+app.use((err, req, res, next) => {
+	console.error(err.stack);
+	res.status(500).send('This page does not exist.');
 });
 
 const PORT = 1337;
